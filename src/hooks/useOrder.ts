@@ -1,8 +1,9 @@
 import { useState } from "react"
 import type { MenuItem, OrderItem } from "../types"
 
-export default function userOrder() {
+export default function useOrder() {
   const [order, setOrder] = useState<OrderItem[]>([])
+  const [tip, setTip] = useState(0)
 
   const addItem = (item: MenuItem) => {
     // Verificar si ya existe el item en la lista 
@@ -26,6 +27,8 @@ export default function userOrder() {
 
   return {
     order,
+    tip,
+    setTip,
     addItem,
     removeItem
   }
