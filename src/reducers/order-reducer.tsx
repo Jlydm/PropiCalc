@@ -52,9 +52,11 @@ export const orderReduder = (
 
   if(action.type === 'place-order'){
 
-      return {
-          ...state,
-      }
+    return {
+      ...state,
+      order: [],
+      tip: 0
+    }
   }
 
   if(action.type === 'remove-item'){

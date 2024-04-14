@@ -4,13 +4,9 @@ import OrderContents from "./components/OrderContents"
 import OrderTotals from "./components/OrderTotals"
 import TipPercentageForm from "./components/TipPercentageForm"
 import { menuItems } from "./data/db"
-import useOrder from "./hooks/useOrder"
 import { initialState, orderReduder } from "./reducers/order-reducer"
 
 function App() {
-
-  const { tip, setTip, placeOrder } = useOrder()
-
   const [state, dispatch] = useReducer(orderReduder, initialState)
 
   return (
@@ -48,7 +44,7 @@ function App() {
               <OrderTotals 
                 order={state.order}
                 tip={state.tip}
-                placeOrder={placeOrder}
+                dispatch={dispatch}
               /> 
             </>
           ) : (
